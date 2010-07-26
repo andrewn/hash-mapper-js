@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hash Mapper test harness</title>
+    <script src='../lib/hash_mapper.js'></script>
+  </head>
+  <body>
+    <script>
+      // Test data
+      var data = {
+        "name" : {
+          "first": "Andrew",
+          "last" : "Nicolaou"
+        },
+        "properties" : {
+          "type" : "person",
+          "egg"  : "organic"
+        },
+        "tagid" : "123",
+        
+      };
+    
+      var map = new HashMapper();
+      /*
+          map.from( '/name/first' ) .to( 'first_name' );
+          map.from( '/name/last' )  .to( 'last_name' );
+      */
+          map.from( '/name' )           .to( 'tag_attributes/name' );
+          map.from( '/properties/type' ).to( 'tag_attributes/type' );
+          map.from( '/tagid' )          .to( 'tag_id' );
+          map.from( '/properties/egg' ) .to( '/chicken' );
+
+          console.dir( map.normalize( data ) );
+    </script>
+  </body>
+</html>
