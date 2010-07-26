@@ -25,9 +25,9 @@
           map.from( '/name/first' ) .to( 'first_name' );
           map.from( '/name/last' )  .to( 'last_name' );
       */
-          map.from( '/name' )           .to( 'tag_attributes/name' );
-          map.from( '/properties/type' ).to( 'tag_attributes/type' );
-          map.from( '/tagid' )          .to( 'tag_id' );
+          map.from( '/name' )           .to( '/tag_attributes/name' );
+          map.from( '/properties/type' ).to( '/tag_attributes/type' );
+          map.from( '/tagid' )          .to( '/tag_id' );
           map.from( '/properties/egg' ) .to( '/chicken' );
 
           console.dir( map.normalize( data ) );
