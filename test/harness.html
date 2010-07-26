@@ -31,6 +31,14 @@
           map.from( '/properties/egg' ) .to( '/chicken' );
 
           console.dir( map.normalize( data ) );
+          
+      var dot = new HashMapper({notation:'dot'});
+          dot.from( 'name' )           .to( 'tag_attributes.name' );
+          dot.from( 'properties.type' ).to( 'tag_attributes.type' );
+          dot.from( 'tagid' )          .to( 'tag_id' );
+          dot.from( 'properties.egg' ) .to( 'chicken' );
+          
+          console.dir( dot.normalize( data ) );
     </script>
   </body>
 </html>
